@@ -1,1 +1,4 @@
-<h1>Posts Index</h1>
+@extends('layout.admin.app')
+@section('content')
+fgfgf
+@endsection

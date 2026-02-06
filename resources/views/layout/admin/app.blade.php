@@ -5,7 +5,6 @@
     @stack('css')
   </head>
   <body>
-      @yield('content')
       <!-- partial:partials/_navbar.html -->
       @include('admin.include.navbar')
       <!-- partial -->
@@ -13,7 +12,10 @@
         <!-- partial:partials/_sidebar.html -->
         @include('admin.include.sidebar')
         <!-- partial -->
-      @include('admin.include.panel')
+        <div class="main-panel">
+          <div class="content-wrapper">
+            @yield('content')
+          </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           @include('admin.include.footer')
@@ -22,7 +24,6 @@
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
-    </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     @include('admin.include.script')
