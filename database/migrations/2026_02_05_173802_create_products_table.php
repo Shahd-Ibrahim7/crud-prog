@@ -10,17 +10,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-    $table->foreignId('category_id')->constrained()->onDelete('cascade');
-    $table->foreignId('brand_id')->constrained()->onDelete('cascade');
-    $table->decimal('price', 8, 2);
-    $table->timestamps();
-});
+            $table->id();
+            $table->string('name');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('brand_id')->constrained()->onDelete('cascade');
+            $table->decimal('price', 8, 2);
+            $table->timestamps();
+        });
 
     }
 
-    
     public function down(): void
     {
         Schema::dropIfExists('products');
