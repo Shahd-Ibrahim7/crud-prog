@@ -17,7 +17,25 @@
                                           <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="card-title">Product Table</h4>
         <a href="{{ route('admin.products.create') }}" class="btn btn-primary">Add Product</a>
-    </div>
+      <form action="{{ route('admin.products.index') }}" method="GET">
+        <div class="title_right">
+          <div class="form-group pull-right top_search">
+            <div class="input-group">
+              <input type="text" name="search" value="{{ request('search') }}" class="form-control" placeholder="Search for...">
+
+              <input type="text" name="price_from"  value="{{ request('price_from') }}"class="form-control" placeholder="Price From...">
+              <input type="text" name="price_to" value="{{ request('price_to') }}" class="form-control" placeholder="Price To...">
+
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>  
+        </form>
+        
+      </div>
+
                     <table class="table table-striped">
                       <thead>
                         <tr>
